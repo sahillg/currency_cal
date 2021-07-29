@@ -1,0 +1,15 @@
+with open('currency_data.txt','r') as f:     #read all exchange rate data from a file
+    lines=f.readlines()    
+
+curr={}
+for line in lines:
+    parse=line.split('\t')          #arange data in split way
+    curr[parse[0]]=parse[1]         #populate dic
+
+
+amount=int(input('Enter the amount of currency:'))
+[print(l) for l in curr.keys()]
+currency=input('Enter currency from abouve list:')
+print(f'{amount} INR equals to {amount * float(curr[currency])} of {currency}')
+
+
